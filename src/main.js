@@ -11,4 +11,11 @@ function checkNumber(num) {
   return -1;
 }
 
-module.exports = {checkNumber}; 
+const loginName = () => {
+  return "ynassibi";
+}
+
+const arrayREturn  =  () => { 
+  return [1, 2, 3, 4];
+};
+module.exports = {checkNumber, loginName, arrayREturn}; 
