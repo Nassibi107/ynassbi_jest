@@ -18,4 +18,13 @@ const loginName = () => {
 const arrayREturn  =  () => { 
   return [1, 2, 3, 4];
 };
-module.exports = {checkNumber, loginName, arrayREturn}; 
+
+const login = (email, password) => {
+
+  if (!email || !password) {
+    throw new Error("Email and password are required.");
+  }
+    return "Login successful.";
+
+}
+module.exports = {checkNumber, loginName, arrayREturn, login}; 

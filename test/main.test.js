@@ -1,6 +1,6 @@
 
 
-const { checkNumber, loginName ,arrayREturn } = require('../src/main');
+const { checkNumber, loginName ,arrayREturn ,login} = require('../src/main');
 
 
 test("checkNumber - ", () => {
@@ -41,3 +41,26 @@ describe("testing array - ", () => {
     expect(arrayREturn()).not.toBeNull();
   });
 });
+
+describe("testing login - ", () => {
+
+  const validEmail = ["" , null, undefined , 0, false] ; 
+  const validPassword = ["" , null, undefined , 0, false] ; 
+  
+   validEmail.forEach(email => {
+    it(`should return error message when email is ${email}`, () => {
+      expect(() => login(email, "password")).toThrow();
+    });
+  });
+
+  validPassword.forEach(password => {
+    it(`should return error message when password is ${password}`, () => {
+      expect(() => login("email", password)).toThrow();
+    });
+  });
+
+  it("should return success message when email and password are valid", () => {
+    expect(login("email", "password")).toBe("Login successful.");
+  });
+  
+} );
